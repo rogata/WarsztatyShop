@@ -3,6 +3,10 @@
 class Products extends General
 {
     const VIEW_PATH = 'Products/views/';
+    public $name;
+    public $price;
+    public $description;
+    public $amount;
 
     public function add(){
 
