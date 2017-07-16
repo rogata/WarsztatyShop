@@ -27,15 +27,8 @@ class General {
 
     public function getConnection()
     {
-        $configDB = array(
-            'servername' => "127.0.0.1",
-            'username' => "root",
-            'password' => "coderslab",
-            'baseName' => "shop"
-        );
 
-        $conn = new mysqli($configDB['servername'], $configDB['username'], $configDB['password'], $configDB['baseName']);
-
+        $conn = new mysqli(...array_values(include 'db.config.php'));
         if ($conn->connect_error) {
             die("Polaczenie nieudane. Blad: " . $conn->connect_error."<br>");
         }
